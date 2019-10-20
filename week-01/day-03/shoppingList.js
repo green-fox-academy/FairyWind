@@ -1,3 +1,5 @@
+'use strict';
+
 var product = {
     'Milk': 1.07,
     'Rice': 1.59,

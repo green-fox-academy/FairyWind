@@ -1,3 +1,5 @@
+'use strict';
+
 class Student{
     learn(){
         console.log('Student is learning something new.');

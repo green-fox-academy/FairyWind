@@ -1,3 +1,5 @@
+'use strict';
+
 var map = {
     'Eggs': 200,
     'Milk': 200,

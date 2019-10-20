@@ -1,3 +1,5 @@
+'use strict';
+
 class Plant{
     constructor(type, color, limit, absorbRate){
         this.type = type;

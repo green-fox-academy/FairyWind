@@ -1,3 +1,5 @@
+'use strict';
+
 const Aircraft = require('./Aircraft');
 
 class Carrier extends Aircraft {
@@ -13,48 +15,47 @@ class Carrier extends Aircraft {
         this.aircraftStore.push(Aircraft);
     }
 
-    fight(Carrier){
+    fight(Carrier) {
         for (let aircraft in this.aircraftStore) {
-        //    this.maxDamage += this.aircraftStore[aircraft].ammo * this.aircraftStore[aircraft].basicDamage;
+            //    this.maxDamage += this.aircraftStore[aircraft].ammo * this.aircraftStore[aircraft].basicDamage;
             this.aircraftStore[aircraft].ammo = 0;
         }
         Carrier.healthPoint -= this.maxDamage;
     }
 
-    getStatus(){
+    getStatus() {
         for (let aircraft in this.aircraftStore) {
             this.maxDamage += this.aircraftStore[aircraft].ammo * this.aircraftStore[aircraft].basicDamage;
-        }   
+        }
         console.log(`HP: ${this.healthPoint}, Aircraft count: ${this.aircraftStore.length}, Ammo Storage: ${this.ammoAmount}, Total damage: ${this.maxDamage}\nAircrafts:`);
         for (let aircraft in this.aircraftStore) {
             console.log(`Type ${this.aircraftStore[aircraft].type}, Ammo: ${this.aircraftStore[aircraft].ammo}, Base Damage: ${this.aircraftStore[aircraft].basicDamage}, All Damage: ${this.aircraftStore[aircraft].allDamage}`)
         }
-        if (this.healthPoint <= 0){
+        if (this.healthPoint <= 0) {
             console.log('It\'s dead Jim :(');
         }
     }
 
 
     fill() {
-        if (this.ammoAmount <= 0){
+        if (this.ammoAmount <= 0) {
             throw new UserException('There is not enough ammo .');
         }
         let sum = 0;
         for (let aircraft in this.aircraftStore) {
             sum += this.aircraftStore[aircraft].maxAmmo - this.aircraftStore[aircraft].ammo;
         }
-        if (sum <= this.ammoAmount) {            
-            for (let aircraft in this.aircraftStore) {    
+        if (sum <= this.ammoAmount) {
+            for (let aircraft in this.aircraftStore) {
                 this.ammoAmount -= this.aircraftStore[aircraft].maxAmmo - this.aircraftStore[aircraft].ammo;
                 this.aircraftStore[aircraft].ammo = this.aircraftStore[aircraft].maxAmmo;
             }
-        }
-        else{
+        } else {
             for (let aircraft in this.aircraftStore) {
-                if (this.aircraftStore[aircraft].isPriority()){
+                if (this.aircraftStore[aircraft].isPriority()) {
                     this.aircraftStore[aircraft].ammo = this.aircraftStore[aircraft].maxAmmo;
                     this.ammoAmount -= this.aircraftStore[aircraft].maxAmmo - this.aircraftStore[aircraft].ammo;
-                    if (this.ammoAmount < 0){
+                    if (this.ammoAmount < 0) {
                         throw new UserException('There is not enough ammo .');
                     }
                 }
@@ -62,8 +63,8 @@ class Carrier extends Aircraft {
             for (let aircraft in this.aircraftStore) {
                 this.aircraftStore[aircraft].ammo = this.aircraftStore[aircraft].maxAmmo;
                 this.ammoAmount -= this.aircraftStore[aircraft].maxAmmo - this.aircraftStore[aircraft].ammo;
-                if (this.ammoAmount < 0){
-                    throw new UserException('There is not enough ammo .');                    
+                if (this.ammoAmount < 0) {
+                    throw new UserException('There is not enough ammo .');
                 }
             }
         }

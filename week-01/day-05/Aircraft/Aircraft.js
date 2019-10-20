@@ -1,3 +1,5 @@
+'use strict';
+
 class Aircraft {
     constructor(type, ammo, maxAmmo, basicDamage) {
         this.type = type;
@@ -16,8 +18,7 @@ class Aircraft {
         if (this.ammo + number <= this.maxAmmo) {
             this.ammo += number;
             return 0;
-        }
-        else {
+        } else {
             this.ammo = this.maxAmmo;
             return number + this.ammo - this.maxAmmo;
         }
@@ -34,8 +35,7 @@ class Aircraft {
     isPriority() {
         if (this.type = 'F35') {
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }

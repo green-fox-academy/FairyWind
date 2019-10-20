@@ -1,6 +1,6 @@
 'use strict';
 
-const Ship = require('./pirate-ship');
+const Ship = require('./PirateShip');
 
 class BattleApp{
     constructor(ship1, ship2){

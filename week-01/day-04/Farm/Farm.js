@@ -10,26 +10,25 @@ breed() -> creates a new animal if there's place for it
 slaughter() -> removes the least hungry animal
  */
 
-class Farm{
-    constructor(slot){
+class Farm {
+    constructor(slot) {
         this.slot = slot;
         this.list = [];
     }
-    
-    breed(animal){
-        if (this.slot > 0){
+
+    breed(animal) {
+        if (this.slot > 0) {
             this.list.push(animal);
-        } 
-        else{
+        } else {
             console.log('The slot is full.')
-        } 
+        }
     }
 
-    slaughter(){
+    slaughter() {
         var minHunger = 100;
         var tip = 0;
-        for (let animal in this.list){
-            if(this.list[animal].hunger < minHunger){
+        for (let animal in this.list) {
+            if (this.list[animal].hunger < minHunger) {
                 minHunger = this.list[animal].hunger;
                 tip = animal;
             }

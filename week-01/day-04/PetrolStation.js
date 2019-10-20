@@ -9,7 +9,8 @@ create constructor for Car where:
 initialize gasAmount -> 0
 initialize capacity -> 100 */
 
-class Station{
+'use strict';
+class PetrolStation{
     constructor(gasAmount){
         this.gasAmount = gasAmount;
     }
@@ -26,6 +27,6 @@ class Car{
 }
 
 const myCar = new Car(10, 100);
-const station = new Station(2000);
+const station = new PetrolStation(2000);
 station.refill(myCar);
 console.log(station.gasAmount);

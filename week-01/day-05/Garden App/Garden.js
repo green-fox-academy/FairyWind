@@ -1,51 +1,51 @@
+'use strict';
+
 const Plant = require('./Plant');
 
-class Garden extends Plant{
-    constructor(type, color, limit, absorbRate){
+class Garden extends Plant {
+    constructor(type, color, limit, absorbRate) {
         super(type, color, limit, absorbRate);
         this.flowers = [];
         this.trees = [];
         this.counter = 0;
     }
 
-    addFlower(Flower){
+    addFlower(Flower) {
         this.flowers.push(Flower);
     }
 
-    addTree(Tree){
+    addTree(Tree) {
         this.trees.push(Tree);
     }
 
-    demonstrateGarden(){
-        for (let flower in this.flowers){
-            if(this.flowers[flower].needWater()){
+    demonstrateGarden() {
+        for (let flower in this.flowers) {
+            if (this.flowers[flower].needWater()) {
                 console.log(`The ${this.flowers[flower].color} ${this.flowers[flower].type} need water.`);
                 this.counter++;
-            }
-            else{
+            } else {
                 console.log(`The ${this.flowers[flower].color} ${this.flowers[flower].type} doesnt need water.`);
             }
         }
-        for (let tree in this.trees){
-            if(this.trees[tree].needWater()){
+        for (let tree in this.trees) {
+            if (this.trees[tree].needWater()) {
                 console.log(`The ${this.trees[tree].color} ${this.trees[tree].type} need water.`);
                 this.counter++;
-            }
-            else{
+            } else {
                 console.log(`The ${this.trees[tree].color} ${this.trees[tree].type} doesnt need water.`);
             }
         }
     }
 
-    watering(amount){
+    watering(amount) {
         console.log(`\nWatering with ${amount}`)
-        for (let flower in this.flowers){
-            if(this.flowers[flower].needWater()){
-                this.flowers[flower].warterAmount += amount / this.counter;                
+        for (let flower in this.flowers) {
+            if (this.flowers[flower].needWater()) {
+                this.flowers[flower].warterAmount += amount / this.counter;
             }
         }
-        for (let tree in this.trees){
-            if(this.trees[tree].needWater()){
+        for (let tree in this.trees) {
+            if (this.trees[tree].needWater()) {
                 this.trees[tree].warterAmount += amount / this.counter;
             }
         }

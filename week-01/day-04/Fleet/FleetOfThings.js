@@ -1,7 +1,7 @@
 'use strict';
 
-const Thing = require('./thing');
-const Fleet = require('./fleet');
+const Thing = require('./Thing');
+const Fleet = require('./Fleet');
 
 const fleet = new Fleet();
 
@@ -19,8 +19,8 @@ const fleet = new Fleet();
 // 4. [x] Eat lunch
 
 // Hint: You have to create a `print()` method as well
-class FleetOfThings{
-    main(){
+class FleetOfThings {
+    main() {
         const getMilk = new Thing('Get milk');
         const removeTheObstacles = new Thing('Remove the obstacles');
         const standUp = new Thing('Stand up');
@@ -31,21 +31,20 @@ class FleetOfThings{
         fleet.add(eatLunch);
         getMilk.complete();
         removeTheObstacles.complete();
-   //     console.log(fleet);
+        //     console.log(fleet);
     }
 
-    print(){
+    print() {
         var output = '';
-        for (let key in fleet.things){
-   //        console.log(typeof(fleet.things[key].completed));
-            if (fleet.things[key].completed){
-                output += key +'\.\[ \] ' + fleet.things[key].name+ '\n';
+        for (let key in fleet.things) {
+            //        console.log(typeof(fleet.things[key].completed));
+            if (fleet.things[key].completed) {
+                output += key + '\.\[ \] ' + fleet.things[key].name + '\n';
+            } else {
+                output += key + '\.\[x\] ' + fleet.things[key].name + '\n';
             }
-            else{
-                output += key +'\.\[x\] ' + fleet.things[key].name + '\n';
-            }
-       } 
-       console.log(output);
+        }
+        console.log(output);
     }
 }
 

@@ -6,7 +6,7 @@ Create a few example post-it objects:
 an orange with blue text: "Idea 1"
 a pink with black text: "Awesome"
 a yellow with green text: "Superb!" */
-
+'use strict';
 class PostIt {
     constructor(backgroundColor,text,textColor){
         this.backgroundColor = backgroundColor;

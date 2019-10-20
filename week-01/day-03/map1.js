@@ -1,3 +1,5 @@
+'use strict';
+
 var map = {
     97:	'a',
     98:	'b',

@@ -15,12 +15,10 @@ class Pirates {
     howsItGoingMate() {
         if (this.counter <= 4) {
             console.log('Pour me anudder!');
-        }
-        else if (this.counter > 20) {
+        } else if (this.counter > 20) {
             this.status = 'Dead';
             console.log('he\'s dead.');
-        }
-        else {
+        } else {
             this.status = 'Passed Out';
             console.log('Arghh, I\'ma Pirate. How d\'ya d\'ink its goin?');
         }
@@ -30,11 +28,9 @@ class Pirates {
         if (x.status = 'live') {
             if (Math.random() < 0.33333) {
                 this.status = 'Dead';
-            }
-            else if (Math.random() > 0.66666) {
+            } else if (Math.random() > 0.66666) {
                 x.status = 'Dead';
-            }
-            else {
+            } else {
                 this.status = 'Passed Out';
                 x.status = 'Passed Out';
             }

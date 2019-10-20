@@ -5,6 +5,7 @@ we can add(number) to increase the counter's value by a whole number
 or we can add() without parameters just increasing the counter's value by one
 and we can get() the current value as string
 also we can reset() the value to the initial value */
+'use strict';
 
 class  Counter{
     constructor(integer = 0){

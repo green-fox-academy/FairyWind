@@ -1,6 +1,6 @@
 'use strict';
 
-const Domino = require('./domino');
+const Domino = require('./Domino');
 
 function initializeDominoes() {
     const dominoes = [];
