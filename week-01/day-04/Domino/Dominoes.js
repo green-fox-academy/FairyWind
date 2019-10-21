@@ -18,7 +18,7 @@ const dominoes = initializeDominoes();
 /** Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides */
 /** eg: [2, 4], [4, 3], [3, 5] ... */
 var connectSide = dominoes[0].values[1];
-for (let order = 0; order < 6;) {
+for (let order = 0; order < 5;) {
     for (let piece in dominoes) {
         let temp = [];
         if (dominoes[piece].values[0] === connectSide) {
@@ -27,6 +27,7 @@ for (let order = 0; order < 6;) {
             temp = dominoes[order];
             dominoes[order] = dominoes[piece];
             dominoes[piece] = temp;
+            break;
         }
     }
 }
