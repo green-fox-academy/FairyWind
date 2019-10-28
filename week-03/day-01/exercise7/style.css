@@ -1,0 +1,30 @@
+  * {
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+  p {
+    color: blue;
+    background-color: yellow;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .b329 {
+    color: blue;
+    font-weight: bold;
+  }
+
+  #b325,
+  .b326 {
+    border: 1px solid green;
+    font-weight: bold;
+  }

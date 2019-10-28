@@ -1,0 +1,28 @@
+  * {
+    font-weight: normal;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  div {
+    display: block;
+    box-sizing: border-box;
+    margin:6px;
+    width: 380px;
+    height: 288px;
+    background-color: rgb(230, 118, 118);
+    border: 15px solid rgb(66, 133, 244);
+  }
+
+  div + div{
+    background-color: rgb(169, 239, 230);
+  }
+
+  p {
+    height: 130px;
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    line-height: 130px;
+  }

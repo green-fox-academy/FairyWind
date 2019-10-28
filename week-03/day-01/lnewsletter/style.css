@@ -1,0 +1,77 @@
+  * {
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 1em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  body {
+    height: 100vh;
+    background: linear-gradient(45deg, rgb(223, 108, 118), rgb(202, 141, 84));
+  }
+
+  main {
+    margin: auto;
+    margin-top: 30px;
+    padding: 1rem;
+    background-color: white;
+    width: 60%;
+    max-width: 400px;
+    border-radius: 70px;
+    box-shadow: 20px 20px 15px rgb(145, 094, 66);
+
+  }
+
+  form {
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: white;
+  }
+
+  label {
+    font-size: 0.7em;
+    margin-top: 15px;
+  }
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 0;
+    background: linear-gradient(to right, rgb(238, 237, 237), white);
+    font-size: 0.8em;
+    border-radius: 15px;
+    padding-left: 0.5em;
+  }
+
+  input[name="name"]:focus {
+    outline: none;
+    border: 1px solid green;
+  }
+
+  p {
+    font-size: 0.6rem;
+    text-align: right;
+  }
+
+  button {
+    display: block;
+    background: linear-gradient(to right, rgb(66, 133, 244), rgb(106, 198, 212), rgb(112, 236, 184));
+    color: white;
+    width: 80px;
+    height: 25px;
+    border: 0;
+    border-radius: 30px;
+    margin: auto;
+    font-size: 0.8rem;
+  }

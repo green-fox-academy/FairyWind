@@ -1,0 +1,44 @@
+  * {
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  h1 {
+    color: blue;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  h2 {
+    color: rgb(235, 180, 26);
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  p {
+    color: black;
+  }
+
+  ul {
+    color: rgb(10, 0, 250);
+    list-style-type: square;
+    margin-left: 2em;
+  }
+
+  ol {
+    margin-left: 2em;
+  }
+
+  .fruit,
+  .vegetable {
+    color: black;
+  }
+
+  span {
+    color: red;
+  }

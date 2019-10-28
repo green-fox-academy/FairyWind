@@ -41,22 +41,22 @@ function findAnswer() {
         while (possibleNum < 10) {
           puzzle[i][j] = possibleNum;
           if (checkGrid(puzzle, i, j) == 0) { //Check valid or not
-            stack.push([i, j++]);  //Save current status and go to next cell
+            stack.push([i, j++]); //Save current status and go to next cell
             break;
           }
           possibleNum++;
         }
         if (possibleNum > 9) {
-          puzzle[i][j] = 0;  //Reset current number
-          let status = stack.pop();   //Go to last saved status
-          if (!status){
+          puzzle[i][j] = 0; //Reset current number
+          let status = stack.pop(); //Go to last saved status
+          if (!status) {
             return 0;
           }
-          i = status[0];  //Reset i and j
+          i = status[0]; //Reset i and j
           j = status[1];
           flag = true;
         }
-      } else {  //The cell already has number
+      } else { //The cell already has number
         j++;
       }
     }
@@ -65,9 +65,12 @@ function findAnswer() {
 }
 
 function checkGrid(puzzle, i, j) {
-  let row = {}, col = {}, subSudo = {};
+  let row = {},
+    col = {},
+    subSudo = {};
   for (let k = 0; k < 9; k++) {
-    let rowCurrentCell = puzzle[i][k], columnCurrentCell = puzzle[k][j]
+    let rowCurrentCell = puzzle[i][k],
+      columnCurrentCell = puzzle[k][j]
     // Judge the row
     if (row[rowCurrentCell]) {
       return 1;

@@ -1,0 +1,12 @@
+p {
+  display: block;
+  box-sizing: border-box;
+  margin: 16px;
+  width: 348px;
+  height: 132px;
+  padding: 20px;
+  background-color: rgb(14, 145, 161);
+  border: 5px solid rgb(125, 206, 148);
+  font-size: 36px;
+  color: rgb(0, 85, 102);
+}

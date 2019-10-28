@@ -1,0 +1,38 @@
+  * {
+    font-weight: normal;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  div {
+    display: block;
+    box-sizing: border-box;
+    width: 380px;
+    height: 550px;
+    border: 15px solid rgb(66, 133, 244);
+  }
+
+  p {
+    height: 130px;
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    line-height: 130px;
+  }
+
+  #north {
+    background-color: rgb(230, 118, 118);
+  }
+
+  #east {
+    background-color: rgb(242, 240, 98);
+  }
+
+  #south {
+    background-color: rgb(169, 239, 230);
+  }
+
+  #west {
+    background-color: rgb(118, 146, 228);
+  }

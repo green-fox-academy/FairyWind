@@ -1,0 +1,19 @@
+  * {
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    color: rgb(237, 165, 26);
+  }
+
+  p {
+    color: black;
+  }
+
+  #text {
+    text-indent: 2em;
+  }

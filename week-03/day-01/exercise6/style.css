@@ -1,0 +1,20 @@
+  * {
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 1em;
+    padding: 0;
+  }
+
+  h1 {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+  p {
+    display: block;
+    width: 320px;
+    font-size: 18px;
+    border-left: 2px solid black;
+    padding-left: 1em;
+  }
