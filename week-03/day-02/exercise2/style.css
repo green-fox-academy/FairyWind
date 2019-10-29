@@ -1,0 +1,14 @@
+ .container {
+   display: flex;
+   background-color: #fcd705;
+   width: 500px;
+   height: 200px;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .item {
+   background-color: rgb(167, 17, 236);
+   width: 70px;
+   height: 70px;
+ }

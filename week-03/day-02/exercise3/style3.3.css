@@ -1,0 +1,21 @@
+ .container {
+   display: flex;
+   background-color: #fcd705;
+   height: 200px;
+   width: 100%;
+   margin:0;
+   padding:0;
+   justify-content: flex-end;
+   align-items: flex-end;
+ }
+
+ .item {
+   background-color: rgb(167, 17, 236);
+   width: 70px;
+   height: 70px;
+   margin-left: 5px;
+ }
+
+ ul{
+   list-style-type: none;
+ }

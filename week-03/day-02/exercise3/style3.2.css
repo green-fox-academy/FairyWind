@@ -1,0 +1,20 @@
+ .container {
+   display: flex;
+   background-color: #fcd705;
+   height: 200px;
+   width: 100%;
+   margin:0;
+   padding:0;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ .item {
+   background-color: rgb(167, 17, 236);
+   width: 70px;
+   height: 70px;
+ }
+
+ ul{
+   list-style-type: none;
+ }
