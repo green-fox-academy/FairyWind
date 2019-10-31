@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: EventListeners</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      text-align: center;
+    }
+
+    button {
+      margin: 16px;
+    }
+
+    .img-inspector {
+      margin: 0 auto;
+      width: 500px;
+      height: 320px;
+      border: 1px solid #3a3a3a;
+      background-image: url("http://pic.616pic.com/ys_b_img/00/24/53/uXAvll2lmB.jpg");
+      background-size: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <button data-action="move" data-direction="up">Up</button>
+    <button data-action="move" data-direction="down">Down</button>
+    <button data-action="move" data-direction="left">Left</button>
+    <button data-action="move" data-direction="right">Right</button>
+    <button data-action="zoom" data-direction="in">Zoom in</button>
+    <button data-action="zoom" data-direction="out">Zoom out</button>
+  </nav>
+  <div class="img-inspector">
+  </div>
+
+  <script>
+    'use strict';
+    const nav = document.querySelector('nav');
+    let img = window.getComputedStyle(document.querySelector('.img-inspector'), null);
+    nav.addEventListener('click', bubbling);
+
+    function bubbling(event) {
+      let xDirection = parseInt(img.backgroundPositionX.slice(0, img.backgroundPositionX.length - 2));
+      let yDirection = parseInt(img.backgroundPositionY.slice(0, img.backgroundPositionY.length - 2));
+      let imgSize = parseInt(img.backgroundSize.slice(0, img.backgroundSize.length - 1));
+
+      switch (event.target.dataset.direction) {
+        case 'up':
+          if (img.backgroundPositionY == '0%') {
+            document.querySelector('.img-inspector').style.backgroundPositionY = '-10px';
+          } else {
+            yDirection -= 10;
+            document.querySelector('.img-inspector').style.backgroundPositionY = `${yDirection}px`;
+          }
+          break;
+        case 'down':
+          if (img.backgroundPositionY == '0%') {
+            document.querySelector('.img-inspector').style.backgroundPositionY = '10px';
+          } else {
+            yDirection += 10;
+            document.querySelector('.img-inspector').style.backgroundPositionY = `${yDirection}px`;
+          }
+          break;
+        case 'left':
+          if (img.backgroundPositionX == '0%') {
+            document.querySelector('.img-inspector').style.backgroundPositionX = '-10px';
+          } else {
+            xDirection -= 10;
+            document.querySelector('.img-inspector').style.backgroundPositionX = `${xDirection}px`;
+          }
+          break;
+        case 'right':
+          if (img.backgroundPositionX == '0%') {
+            document.querySelector('.img-inspector').style.backgroundPositionX = '10px';
+          } else {
+            xDirection += 10;
+            document.querySelector('.img-inspector').style.backgroundPositionX = `${xDirection}px`;
+          }
+          break;
+        case 'in':
+          imgSize += 20;
+          document.querySelector('.img-inspector').style.backgroundSize = `${imgSize}%`;
+          break;
+        case 'out':
+          imgSize -= 20;
+          document.querySelector('.img-inspector').style.backgroundSize = `${imgSize}%`;
+      }
+    }
+  </script>
+  <!-- You can work in the html or in a separate js file. Like:
+    <script>
+      Here is an image inspector, but the buttons are not implemented yet, that will
+      be your task!
+       - the nav buttons (up, down, left, right) move the background by 10px
+       - the zoom buttons increase/decrease the image by 20%
+       - attach only two event listeners to the nav element
+         - one for navigation
+         - one for zooming
+    </script>
+    OR
+    <script src="bubbling.js"></script> -->
+</body>
+
+</html>

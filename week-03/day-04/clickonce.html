@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: EventListeners</title>
+</head>
+
+<body>
+  <button class="first">Click me1</button>
+  <button class="second">Click me2</button>
+
+  <script>
+    'use strict';
+    const button1 = document.querySelector('.first');
+    const button2 = document.querySelector('.second');
+
+    //first way
+    let buttonClick1 = function (event) {
+      console.log(event.timeStamp)
+      button1.removeEventListener('click', buttonClick1);
+    }
+    button1.addEventListener('click', buttonClick1);
+
+    //second way
+    let flag = false;
+    let buttonClick2 = function (event) {
+      if (!flag) {
+        console.log(event.timeStamp);
+        flag = true;
+      }
+    }
+    button2.addEventListener('click', buttonClick2);
+  </script>
+  <!-- You can work in the html or in a separate js file. Like:
+    <script>
+      Create an event listener which logs the current timestamp to the console once the button is clicked.
+      When the button is clicked for the second or any other times no event listener should be called.
+      Try to solve this two different ways.
+      hint: take a look at the button attributes https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+    </script>
+    OR
+    <script src="one-time-clicker.js"></script> -->
+</body>
+
+</html>
