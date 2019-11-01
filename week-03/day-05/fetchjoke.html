@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fetch some joke</title>
+</head>
+
+<body>
+  <p>Here is the joke</p>
+  <button>Gimme a joke</button>
+  <script>
+    'use strict';
+
+    function myFetch() {
+      fetch("http://api.icndb.com/jokes/random")
+        .then(function (response) {
+          response.json().then(function (data) {
+            console.log(data);
+            display(data)
+          })
+        });
+    }
+
+    function display(data) {
+      document.querySelector('p').textContent = data.value.joke;
+    }
+
+    let button = document.querySelector('button');
+    button.addEventListener('click', () => {
+      myFetch();
+    })
+    myFetch();
+  </script>
+
+</body>
+
+</html>

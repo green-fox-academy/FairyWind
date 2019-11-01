@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>New York Times API</title>
+
+</head>
+
+<body>
+  <label>Enter character name</label>
+  <input type="text" name="input"/>
+  <button>search</button>
+  <ul class="result">
+  </ul>
+
+  <script>
+    'use strict';
+
+    let input = document.querySelector('input').innerHTML;
+    console.log(input);
+    let search = document.querySelector('button');
+    search.addEventListener('click', () => {
+      fetch(`https://swapi.co/api/people/${input}`)
+        .then(function (response) {
+          response.json().then(function (data) {
+            console.log(data.response);
+  //          display(data)
+          })
+        });
+    });
+
+    function display(data) {
+      for (let i = 0; i < data.response.docs.length; i++) {
+        let showArticle = document.createElement('ul');
+        let headline = document.createElement('li');
+        headline.textContent = data.response.docs[i].headline.main;
+        showArticle.appendChild(headline);
+        let snippet = document.createElement('li');
+        snippet.textContent = data.response.docs[i].snippet;
+        showArticle.appendChild(snippet);
+        let date = document.createElement('li');
+        date.textContent = data.response.docs[i].pub_date;
+        showArticle.appendChild(date);
+        let link = document.createElement('li');
+        link.innerHTML = `<a href = ${data.response.docs[i].web_url}>Click here to read</a>`;
+        // link.textContent = 'Click here to read';
+        // link.setAttribute('href', data.response.docs[i].web_url);
+        showArticle.appendChild(link);
+        showArticle.style.marginBottom = '20px';
+        document.querySelector('.Article').appendChild(showArticle);
+      }
+    }
+  </script>
+
+</body>
+
+</html>

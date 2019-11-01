@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Giphy API</title>
+  <style>
+    .gif {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="gif">
+  </div>
+  <script>
+    'use strict';
+
+    fetch(
+        "https://api.giphy.com/v1/gifs/search?api_key=Oht0DaqZuNtefvOD4eiZDOAACLLg05up&q=harry+potter&limit=16&offset=0&rating=G&lang=en"
+      )
+      .then(function (response) {
+        response.json().then(function (data) {
+          display(data)
+        })
+      });
+
+    function display(data) {
+      for (let i = 0; i < data.data.length; i++) {
+        let showGif = document.createElement('img');
+        showGif.style.margin = '20px';
+        showGif.setAttribute('src', data.data[i].images.original_still.url);
+        document.querySelector('.gif').appendChild(showGif);
+        showGif.addEventListener('click', () => {
+          showGif.setAttribute('src', data.data[i].images.original.url);
+        })
+      }
+    }
+  </script>
+
+</body>
+
+</html>

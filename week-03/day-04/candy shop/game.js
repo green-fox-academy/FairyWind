@@ -56,7 +56,7 @@ candyRain.addEventListener('click', () => {
   speed = Number(document.querySelector('.speed').textContent);
   speed *= 10;
   document.querySelector('.speed').textContent = speed;
-  interval = 1/speed;
+  interval = 1 / speed;
   clearInterval(myInterval);
   window.setInterval(generateCandy, interval)
 })
