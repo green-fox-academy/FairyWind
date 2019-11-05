@@ -15,7 +15,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/error" component={Error} />
-          <Route path="/error/:errorcode" component={ErrorCode} />
+          <Route path="/error/:errorCode" component={ErrorCode} />
           <Route render={() => <h1>This page is not implement yet.</h1>} />
         </Switch>
       </Router>
@@ -25,6 +25,6 @@ class App extends React.Component {
 
 const Home = () => <h1>Hello World!</h1>;
 const Error = () => <h1>Something bad happened.</h1>;
-const ErrorCode = ({match}) => <h1>Error: {match.params.errorcode}</h1>;
+const ErrorCode = ({match}) => <h1>Error: {match.params.errorCode}</h1>;
 
 export default App;
