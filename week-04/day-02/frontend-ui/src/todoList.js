@@ -10,7 +10,8 @@ export default class Home extends React.Component {
 
     this.state = {
       currentPage: 'home',
-      todo: []
+      todo: [],
+      input: ''
     };
 
     this.completed = false;
@@ -23,6 +24,10 @@ export default class Home extends React.Component {
       return false;
     }
     return true;
+  }
+
+  handleChange(e) {
+    this.setState({ input: e.target.value });
   }
 
   addTodo() {
@@ -55,7 +60,7 @@ export default class Home extends React.Component {
     return (
       <div>
         <h1 className="heading">TODOS</h1>
-        <input type="text" defaultValue=""></input>
+        <input type="text" onChange={this.handleChange.bind(this)} defaultValue={this.state.input}></input>
         <button className="button-text" onClick={this.addTodo.bind(this)}>Add</button>
         <ul className="todo-item">{this.state.todo.map((element) => {
           return (
