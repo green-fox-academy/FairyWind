@@ -23,7 +23,7 @@ class GoldenAcorn extends React.Component {
     })
   }
 
-  keyEvent(e) {
+  keyEvent(e) {d
     if (e.code === 'ArrowUp') {
       this.handleIncrement();
     } else if (e.code === 'ArrowDown') {

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import bin from './bin.svg'
 import tick from './tick.svg'
+import tickClicked from './tick-clicked.svg'
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -9,25 +10,44 @@ export default class Home extends React.Component {
 
     this.state = {
       currentPage: 'home',
-      todo: ['Get up', 'Do some work']
+      todo: []
     };
+
+    this.completed = false;
   }
 
   checkLength(input) {
     let minLength = 3;
     if (input.value.length < minLength) {
       alert("The input needs to be at least 3 character long.")
+      return false;
     }
+    return true;
   }
 
   addTodo() {
     let input = document.querySelector('input');
-    if (input.value.length < 3) {
-      alert("The input needs to be at least 3 character long.")
+    if (this.checkLength(input)) {
+      this.setState({ todo: [...this.state.todo, input.value] });
+    }
+  }
+
+  deleteTodo(e) {
+    let tempArr = [...this.state.todo];
+    let index = tempArr.indexOf(e.target.dataset.value);
+    if (index !== -1) {
+      tempArr.splice(index, 1);
+      this.setState({ todo: tempArr });
+    }
+  }
+
+  changeState(e) {
+    if (!this.completed) {
+      e.target.src = tickClicked;
+      this.completed = true;
     } else {
-      this.setState({
-        todo: [input.value]
-      })
+      e.target.src = tick;
+      this.completed = false;
     }
   }
 
@@ -36,16 +56,16 @@ export default class Home extends React.Component {
       <div>
         <h1 className="heading">TODOS</h1>
         <input type="text" defaultValue=""></input>
-        <button className="button-text" onClick={this.addTodo}>Add</button>
-        <ul className="todo-item">{this.state.todo.map(element => {
+        <button className="button-text" onClick={this.addTodo.bind(this)}>Add</button>
+        <ul className="todo-item">{this.state.todo.map((element) => {
           return (
-            <>
-              <label><li key={element}></li>{element}</label>
+            <li>
+              <label><p key={element}></p>{element}</label>
               <span>
-                <img src={bin} alt="bin" className="icon"></img>
-                <img src={tick} alt="tick" className="icon"></img>
+                <img src={bin} alt="bin" className="icon" onClick={this.deleteTodo.bind(this)} data-value={element}></img>
+                <img src={tick} alt="tick" className="icon" onClick={this.changeState.bind(this)} data-value={element}></img>
               </span>
-            </>
+            </li>
           )
         })}</ul>
       </div>

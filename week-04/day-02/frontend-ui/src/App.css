@@ -61,20 +61,18 @@ button {
 }
 
 ul {
-  width: 280px;
-}
-
-span {
-  float: right;
+  width: 340px;
 }
 
 li {
   list-style-type: none;
   color: #b8b8b8;
+  display: flex;
+  justify-content: space-between;
 }
 
 .icon {
-  margin-top: 15px;
-  margin-right: 5px;
-  height: 24px;
+  margin-left: 10px;
+  margin-top: 0;
+  height: 26px;
 }
