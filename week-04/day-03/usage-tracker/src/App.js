@@ -1,22 +1,24 @@
 import React from 'react';
-import './App.css';
 import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom';
-import component1 from './component1';
-import component2 from './component2';
+import Component1 from './component/component1';
+import Component2 from './component/component2';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: 'component1',
-      duration: 0
+      data: []
     };
   }
 
   changeMount(currentPage, duration) {
     this.setState({
-      currentPage: currentPage,
-      duration: duration
+      data: [...[...this.state.data],
+      {
+        currentPage: currentPage,
+        duration: duration
+      }
+      ]
     })
   }
 
@@ -33,8 +35,8 @@ class App extends React.Component {
           </NavLink>
           </nav>
           <Switch>
-            <Route exact path="/" render={() => <component1 changeMount={(currentPage, duration) => this.changeMount(currentPage, duration)} />} />
-            <Route exact path="/" render={() => <component2 changeMount={(currentPage, duration) => this.changeMount(currentPage, duration)} />} />
+            <Route exact path="/" render={() => <Component1 changeMount={this.changeMount.bind(this)} />} />
+            <Route exact path="/page" render={() => <Component2 changeMount={this.changeMount.bind(this)} />} />
           </Switch>
         </Router>
         <table style={{ width: "50%" }}>
@@ -45,10 +47,14 @@ class App extends React.Component {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>{this.state.currentPage}</td>
-              <td>{this.state.duration}</td>
-            </tr>
+            {this.state.data.map(({ currentPage, duration }, index) => {
+              return (
+                <tr key={index} style={{ textAlign:"center" }}>
+                  <td>{currentPage}</td>
+                  <td>{`${duration}s`}</td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </>

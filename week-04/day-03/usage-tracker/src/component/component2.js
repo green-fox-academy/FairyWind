@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class component1 extends React.Component {
+export default class Component2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,11 +15,11 @@ export default class component1 extends React.Component {
   }
 
   componentWillUnmount() {
-    const { changeMount } = this.props;
-    changeMount('component1', (Date.now() - this.time) / 1000);
+    let duration = (Date.now() - this.state.time) / 1000;
+    this.props.changeMount('component2', duration);
   }
 
   render() {
-    return <h1>component1</h1>
+    return <h1>This is component2</h1>
   }
 }
