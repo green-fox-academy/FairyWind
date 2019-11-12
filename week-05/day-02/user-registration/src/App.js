@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import useForm from 'react-hook-form';
 
 function App() {
   const { register, handleSubmit } = useForm();
-  const [userName, setUserName] = useState('');
-  const [email, setEmail] = useState('');
   const onSubmit = data => {
     console.log(data);
   };
