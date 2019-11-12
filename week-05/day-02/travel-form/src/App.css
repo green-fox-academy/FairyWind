@@ -1,0 +1,30 @@
+* {
+  margin: 0 0 0 5px;
+  padding: 0;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+h3 {
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+textarea {
+  height: 100px;
+}
