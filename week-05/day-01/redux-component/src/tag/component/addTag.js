@@ -5,7 +5,7 @@ import { addTag } from '../actionCreators'
 export default function AddTag() {
   const whatever = useSelector(state => state.counter);
   const dispatch = useDispatch();
-  let input = 0;
+  let input = '';
   return (
     <div className="block">
       <p>Add Tag</p>
