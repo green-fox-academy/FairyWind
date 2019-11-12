@@ -14,45 +14,58 @@ export default [
   {
     name: 'picture1',
     src: picture1,
+    description: 'Hogwarts evening'
   },
   {
     name: 'picture2',
     src: picture2,
+    description: 'Hogwarts in war'
+
   },
   {
     name: 'picture3',
     src: picture3,
+    description: '9 3/4 Stand'
+
   },
   {
     name: 'picture4',
     src: picture4,
+    description: 'Movie 3'
   },
   {
     name: 'picture5',
     src: picture5,
+    description: 'Movie 2'
   },
   {
     name: 'picture6',
     src: picture6,
+    description: 'Movie 7'
   },
   {
     name: 'picture7',
     src: picture7,
+    description: 'Movie 7'
   },
   {
     name: 'picture8',
     src: picture8,
+    description: 'Movie 6'
   },
   {
     name: 'picture9',
     src: picture9,
+    description: 'Movie 1'
   },
   {
     name: 'picture10',
     src: picture10,
+    description: 'Quidditch Court'
   },
   {
     name: 'picture11',
     src: picture11,
+    description: 'Buckbeak'
   },
 ]
