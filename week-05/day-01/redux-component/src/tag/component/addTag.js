@@ -1,9 +1,8 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addTag } from '../actionCreators'
 
 export default function AddTag() {
-  const whatever = useSelector(state => state.counter);
   const dispatch = useDispatch();
   let input = '';
   return (

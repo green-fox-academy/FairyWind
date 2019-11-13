@@ -1,15 +1,13 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { resetCounter } from '../actionCreators'
+import { useSelector } from 'react-redux';
 
 export default function ComplexCounter() {
   const tagState = useSelector(state => state.tag);
   const counterState = useSelector(state => state.counter);
-  const dispatch = useDispatch();
   return (
     <div className="block">
       <p>Complex Counter</p>
-      <span>{tagState.length + counterState}</span>
+      <span>{tagState.length + parseInt(counterState)}</span>
     </div>
   )
 }

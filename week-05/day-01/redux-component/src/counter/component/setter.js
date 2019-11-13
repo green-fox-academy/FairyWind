@@ -1,9 +1,8 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setCounter } from '../actionCreators'
 
 export default function Setter() {
-  const whatever = useSelector(state => state.counter);
   const dispatch = useDispatch();
   let input = 0;
   return (

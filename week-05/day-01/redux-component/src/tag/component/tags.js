@@ -1,10 +1,8 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { resetCounter } from '../actionCreators'
+import { useSelector } from 'react-redux';
 
 export default function Tags() {
   const whatever = useSelector(state => state.tag);
-  const dispatch = useDispatch();
   return (
     <div className="block">
       <p>Tags</p>

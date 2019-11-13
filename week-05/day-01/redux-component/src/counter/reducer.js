@@ -10,6 +10,7 @@ export const counter = (state = 0, action) => {
       return state = 0;
     case SET_ACTION:
       return state = action.payload
+
     default:
       return state;
   }
