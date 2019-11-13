@@ -29,6 +29,6 @@ export function fetchImage() {
     fetch(url)
       .then(response => response.json())
       .then((response) => dispatch(showImage(response)))
-      .then((response) => dispatch(endFetch()))
+      .then(() => dispatch(endFetch()))
   }
 }
