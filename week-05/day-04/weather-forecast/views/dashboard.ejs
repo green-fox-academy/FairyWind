@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/static/style/dashboard-style.css">
+  <title>Dashboard Forecast</title>
+</head>
+
+<body>
+  <h1>Weather Forecast</h1>
+  <%- include('../static/partials/nav.ejs', {selected:"posts"}) %>
+  <ul>
+    <% forecasts.forEach(city =>{ %>
+    <li>
+      <span>
+        <p class="cityName"><%= city.city %></p>
+        <p class="location"><%= city.location %></p>
+      </span>
+      <span>
+        <p class="temp"><%= city.weather[0].temp %>°C</p>
+        <img src="/static/icon/<%= city.weather[0].icon %>.png" alt=<%= city.icon %>>
+      </span>
+    </li>
+    <% }) %>
+  </ul>
+</body>
+
+</html>

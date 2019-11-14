@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/static/style/cityDetails-style.css">
+  <title>Detailed Forecast</title>
+</head>
+
+<body>
+  <h1><%= cityDetails.city %></h1>
+  <%- include('../static/partials/nav.ejs', {selected:"posts"}) %>
+  <ul>
+    <% cityDetails.weather.forEach(day =>{ %>
+    <li>
+      <img src="/static/icon/<%= day.icon %>.png" alt=<%= day.icon %>>
+      <p class="temp"><%= day.temp %>°C</p>
+      <p class="message"><%= day.message %></p>
+    </li>
+    <% }) %>
+  </ul>
+</body>
+
+</html>
