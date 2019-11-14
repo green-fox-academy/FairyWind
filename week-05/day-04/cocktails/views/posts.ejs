@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <title>todos</title>
+</head>
+
+<body>
+  <h1>Cocktails</h1>
+  <%- include('../static/partials/nav.ejs', {selected:"posts"}) %>
+  <table>
+    <thead>
+      <th>NAME</th>
+      <th>PRICE</th>
+    </thead>
+    <tbody>
+      <% alcoholList.forEach(cocktail => { %>
+      <tr>
+        <td>
+          <span>
+            <p class="name"><%= cocktail.name %></p>
+            <% if (!cocktail.isAlcoholic){ %>
+            <p>(non-alcoholic)</p>
+            <% } %>
+          </span>
+          <p class="contain"><%= cocktail.contains %></p>
+        </td>
+        <td><%= cocktail.price %> Ft</td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <ul>
+
+  </ul>
+</body>
+
+</html>
