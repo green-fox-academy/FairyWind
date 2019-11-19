@@ -11,20 +11,24 @@
 <body>
   <h1>Weather Forecast</h1>
   <%- include('../static/partials/nav.ejs', {selected:"posts"}) %>
-  <ul>
-    <% forecasts.forEach(city =>{ %>
-    <li>
-      <span>
-        <p class="cityName"><%= city.city %></p>
-        <p class="location"><%= city.location %></p>
-      </span>
-      <span>
-        <p class="temp"><%= city.weather[0].temp %>°C</p>
-        <img src="/static/icon/<%= city.weather[0].icon %>.png" alt=<%= city.icon %>>
-      </span>
-    </li>
-    <% }) %>
-  </ul>
+  <div class="container">
+    <ul>
+      <% forecasts.map((city, index) =>{ %>
+
+      <button onclick="window.location='/cities/<%= `${index}` %>'">
+        <span>
+          <p class="cityName"><%= city.city %></p>
+          <p class="location"><%= city.location %></p>
+        </span>
+        <span>
+          <p class="temp"><%= city.weather[0].temp %>°C</p>
+          <img src="/static/icon/<%= city.weather[0].icon %>.png" alt=<%= city.icon %>>
+        </span>
+      </button>
+
+      <% }) %>
+    </ul>
+  </div>
 </body>
 
 </html>

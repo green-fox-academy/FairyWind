@@ -4,6 +4,14 @@
   font-size: 1rem;
 }
 
+body {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 h1 {
   font-size: 1.5em;
   margin: 5px 0 5px 5px;
@@ -17,29 +25,30 @@ a {
   margin-right: 20px;
 }
 
-img {
-  height: 120px;
-}
-
 ul {
   background-color: lightcyan;
-  width: 900px;
+  width: 80%;
   height: 250px;
-  margin: auto;
   list-style: none;
   padding: 5px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  overflow-x: scroll;
 }
 
 li {
+  min-width: 160px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   background-color: white;
   margin: 15px;
-  width: 160px;
+}
+
+img {
+  height: 120px;
 }
 
 p {

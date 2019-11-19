@@ -4,6 +4,13 @@
   font-size: 1rem;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
 h1 {
   font-size: 1.5em;
   margin: 5px 0 5px 5px;
@@ -17,25 +24,39 @@ a {
   margin-right: 20px;
 }
 
-img {
-  height: 70px;
+.container {
+  overflow: hidden;
+  width: 350px;
 }
 
 ul {
   background-color: lightcyan;
   width: 350px;
+  height: 80vh;
   margin: auto;
   list-style: none;
-  padding: 5px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
 }
 
-li {
+button {
+  width: 320px;
+  min-height: 120px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  margin: 15px;
+  margin: 15px 15px 15px 5px;
+}
+
+span {
+  margin-left: 10px;
+  text-align: left;
 }
 
 .cityName {
@@ -52,8 +73,8 @@ li {
   font-size: 0.8em;
 }
 
-span {
-  margin-left: 10px;
+img {
+  height: 70px;
 }
 
 span:last-child {
