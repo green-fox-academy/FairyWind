@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <title>titles</title>
+</head>
+
+<body>
+  <h1>titles</h1>
+  <%- include('../static/partials/pageNav.ejs', {selected:"posts"}) %>
+  <table>
+    <thead>
+      <th>title</th>
+    </thead>
+    <tbody>
+      <% result.forEach(book => { %>
+      <tr>
+        <td><%= book.title %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+
+</html>

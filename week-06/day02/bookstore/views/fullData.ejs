@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+  <title>full data</title>
+</head>
+
+<body>
+  <h1>full data</h1>
+  <%- include('../static/partials/pageNav.ejs', {selected:"posts"}) %>
+  <table>
+    <thead>
+      <th>title</th>
+      <th>author</th>
+      <th>category</th>
+      <th>publisher</th>
+      <th>price</th>
+    </thead>
+    <tbody>
+      <% result.forEach(book => { %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+        <td><%= book.category %></td>
+        <td><%= book.publisher %></td>
+        <td><%= book.price %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+
+</html>
