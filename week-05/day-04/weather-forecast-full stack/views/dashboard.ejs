@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/static/style/dashboard-style.css">
+  <title>Dashboard Forecast</title>
+</head>
+
+<body>
+  <h1>Weather Forecast</h1>
+  <%- include('../static/partials/nav.ejs', {selected:"posts"}) %>
+  <div class="container">
+    <ul>
+      <% result.map((city, index) =>{ %>
+
+      <button onclick="window.location='/cities/<%= index + 1 %>'">
+        <span>
+          <p class="cityName"><%= city.cityName %></p>
+          <p class="location"><%= city.location %></p>
+        </span>
+        <span>
+          <p class="temp"><%= city.temp %>°C</p>
+          <img src="/static/icon/<%= city.icon %>.png" alt=<%= city.icon %>>
+        </span>
+      </button>
+
+      <% }) %>
+    </ul>
+  </div>
+</body>
+
+</html>
