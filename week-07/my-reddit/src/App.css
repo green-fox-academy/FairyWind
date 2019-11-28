@@ -1,0 +1,333 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+body {
+  background: url("./image/background.jpg");
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  display: grid;
+  grid-template-areas:
+    'header header header header header'
+    'header header header header header'
+    'main main main main sidebar'
+    'main main main main sidebar'
+    'main main main main sidebar'
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  background-color: white;
+}
+
+.linkCombine {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.link {
+  font-size: 1.1em;
+  color: black;
+}
+
+.icon {
+  height: 30px;
+  margin: 10px;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropButton {
+  background-color: white;
+  color: black;
+  min-width: 80px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropContent {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 80px;
+  text-align: center;
+  box-shadow: 0 9px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropContent p,
+.dropContent a {
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+  display: block;
+}
+
+.dropContent p {
+  padding: 10px 0;
+}
+
+.dropdown:hover .dropContent {
+  display: block;
+}
+
+.dropContent p:hover,
+.dropContent a:hover {
+  background-color: red;
+  color: white;
+}
+
+header {
+  grid-area: header;
+  margin-top: 60px;
+  background: url("./image/avengersjpg.jpg");
+  background-position-y: -180px;
+  background-origin: border-box;
+  height: 200px;
+}
+
+.title {
+  font-size: 4em;
+  text-align: center;
+  margin: 100px 30px 20px 20px;
+  color: white;
+  font-weight: bold;
+  text-shadow: 5px 5px black;
+}
+
+main {
+  grid-area: main;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  background-color: lightgoldenrodyellow;
+  margin: 20px;
+}
+
+li:nth-child(even) {
+  background-color: rgb(250, 208, 208);
+}
+
+.score {
+  font-size: 0.95em;
+  margin: 5px 0;
+}
+
+.score:first-child {
+  margin: 20px 10px;
+  width: 60px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail {
+  display: flex;
+  flex-direction: row;
+  color: gray;
+  margin: 10px 0 10px 0;
+}
+
+.detail p {
+  font-size: 0.8em;
+}
+
+ul a {
+  color: orange;
+}
+
+.postTitle {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.timestamp {
+  margin-left: 30px;
+}
+
+.content button {
+  background-color: transparent;
+  border: none;
+  color: gray;
+  margin-top: 10px;
+  width: 110px;
+  font-size: 0.9em;
+}
+
+.operate {
+  display: flex;
+  flex-direction: row;
+}
+
+.content button:hover {
+  color: red;
+}
+
+.comment {
+  color: gray;
+}
+
+.comment:hover{
+  color: red;
+}
+
+.upvoted {
+  background: url("./icon/upvoted.png");
+  height: 20px;
+  width: 20px;
+}
+
+.upvote {
+  background: url("./icon/upvote.png");
+  height: 20px;
+  width: 20px;
+}
+
+.downvoted {
+  background: url("./icon/downvoted.png");
+  height: 20px;
+  width: 20px;
+}
+
+.downvote {
+  background: url("./icon/downvote.png");
+  height: 20px;
+  width: 20px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  width: 100%;
+  min-width: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.tag {
+  margin: 20px 20px 0 0;
+  background-color: rgb(250, 208, 208);
+  height: 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.img {
+  max-width: 94%;
+  margin-top: 20px;
+}
+
+.sideTitle {
+  background-color: red;
+  color: white;
+  font-size: 0.9em;
+  height: 30px;
+  padding: 10px 0 0 10px;
+  margin: 0;
+}
+
+.sideName {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.about {
+  font-size: 1em;
+}
+
+.logo {
+  margin: 5px 5px 0 10px;
+  height: 4em;
+}
+
+.description {
+  margin: 10px 10px 20px 20px;
+  font-size: 0.95em;
+}
+
+.submit {
+  text-align: center;
+  background: red;
+  color: white;
+  border: none;
+  height: 35px;
+  width: 90%;
+  margin: 5%;
+}
+
+.submit a {
+  color: white;
+}
+
+form {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  background-color: rgb(250, 208, 208);
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  margin: 20px 50px;
+  padding: 20px;
+}
+
+label {
+  margin-top: 10px;
+  font-size: 1em;
+}
+
+input {
+  height: 30px;
+  margin-top: 5px;
+}
+
+.login {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.signIn {
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+
+}
+
+.signIn:hover {
+  color: white;
+}
+
+.addComment{
+  height: 200px;
+}
+
+textarea{
+  height: 180px;
+  font-size: 1.2em;
+}
+
+.addComment .submit{
+  height:50px;
+  margin-bottom: 0;
+}
