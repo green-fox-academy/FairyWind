@@ -6,7 +6,6 @@ import { FetchResult } from './component/fetchResult'
 import { SendMessage } from './component/sendMessage'
 import { ReloadMessage } from './component/reloadMessage'
 
-
 function App() {
   return (
     <Provider store={store}>

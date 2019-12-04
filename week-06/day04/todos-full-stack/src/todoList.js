@@ -19,7 +19,7 @@ export default class Home extends React.Component {
 
   checkLength(input) {
     let minLength = 3;
-    if (input.value.length < minLength) {
+    if (input.length < minLength) {
       alert("The input needs to be at least 3 character long.")
       return false;
     }
@@ -33,7 +33,7 @@ export default class Home extends React.Component {
   addTodo() {
     let input = document.querySelector('input');
     if (this.checkLength(input)) {
-      this.setState({ todo: [...this.state.todo, {text: input.value}] });
+      this.setState({ todo: [...this.state.todo, { text: input.value }] });
     }
   }
 
@@ -72,10 +72,10 @@ export default class Home extends React.Component {
         <h1 className="heading">TODOS</h1>
         <input type="text" onChange={this.handleChange.bind(this)} defaultValue={this.state.input}></input>
         <button className="button-text" onClick={this.addTodo.bind(this)}>Add</button>
-        <ul className="todo-item">{this.state.todo.map((element) => {
+        <ul className="todo-item">{this.state.todo.map((element, index) => {
           return (
-            <li>
-              <label><p key={element}></p>{element.text}</label>
+            <li key={index}>
+              <label><p key={index}></p>{element.text}</label>
               <span>
                 <img src={bin} alt="bin" className="icon" onClick={this.deleteTodo.bind(this)} data-value={element}></img>
                 <img src={tick} alt="tick" className="icon" onClick={this.changeState.bind(this)} data-value={element}></img>

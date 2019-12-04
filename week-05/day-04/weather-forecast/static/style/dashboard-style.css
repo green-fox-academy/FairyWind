@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   font-size: 1rem;
+  text-decoration: none;
 }
 
 body {
@@ -9,19 +10,29 @@ body {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  background-color: palegoldenrod;
 }
 
 h1 {
   font-size: 1.5em;
-  margin: 5px 0 5px 5px;
+  margin: 20px 0 0 5px;
 }
 
 nav {
-  margin: 10px 5px;
+  margin: 20px 5px;
+  padding: 10px;
+  height: 20px;
+  background-color: papayawhip;
 }
 
 a {
   margin-right: 20px;
+  font-weight: bold;
+  color:black;
+}
+
+a:hover{
+  color: lightcyan;
 }
 
 .container {
@@ -70,7 +81,8 @@ span {
 }
 
 .location {
-  font-size: 0.8em;
+  font-size: 0.85em;
+  margin-top: 5px;
 }
 
 img {
